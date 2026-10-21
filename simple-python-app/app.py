@@ -8,7 +8,7 @@ def hello():
     <h1>Hello, World!</h1>
     <p>Welcome to my AWS CI/CD project.</p>
     <p>Containerized using Docker.</p>
-    <p>Deployed locally using Docker Desktop.</p>
+    <p>Deployed locally using Docker Desktop. didn't yet deployed to any cd platform for deploy</p>
     '''
 
 if __name__ == '__main__':
