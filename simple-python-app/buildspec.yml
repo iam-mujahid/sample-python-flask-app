@@ -2,30 +2,29 @@ version: 0.2
 
 env:
   parameter-store:
-    DOCKER_REGISTRY_USERNAME: /myapp/docker-credentials/username
-    DOCKER_REGISTRY_PASSWORD: /myapp/docker-credentials/password
-    DOCKER_REGISTRY_URL: /myapp/docker-registry/url
+    DOCKER_REGISTRY_USERNAME: /sample-flask-app/docker-credentials/username
+    DOCKER_REGISTRY_PASSWORD: /sample-flask-app/docker-credentials/password
+    DOCKER_REGISTRY_URL: /sample-flask-app/docker-credentials/url
 phases:
+  #as checkout phase of github is already done when we connected the github connection and given repo url
   install:
     runtime-versions:
+      #here we installing python to make an environment to build and push the docker
       python: 3.11
   pre_build:
     commands:
-      - echo "Installing dependencies..."
-      - pip install -r day-13/simple-python-app/requirements.txt
+      - echo "Installing dependencies"
+      #before building image to build the image as image might use it build it self but will no t be available in environment where building the image"
+      - pip install -r simple-python-app/requirements.txt
   build:
     commands:
-      - echo "Running tests..."
-      - cd day-13/simple-python-app/
-      - echo "Building Docker image..."
+      - echo "Running tests"
+      - cd simple-python-app/
+      - echo "Docker login"
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
+      - echo "Building docker image"
       - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/simple-python-flask-app:latest" .
       - docker push "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/simple-python-flask-app:latest"
   post_build:
     commands:
-      - echo "Build completed successfully!"
-artifacts:
-  files:
-    - '**/*'
-  base-directory: ../simple-python-app
-
+      - echo "building is completed"
