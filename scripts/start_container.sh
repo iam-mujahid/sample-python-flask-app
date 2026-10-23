@@ -7,4 +7,4 @@ docker pull mujahidhub/simple-python-flask-app:latest
 
 
 # Run the Docker image as a container
-docker run -d -p 80:5000 mujahidhub/simple-python-flask-app:latest --name flask-app-container
+docker run -d -p --name flask-app-container 80:5000 mujahidhub/simple-python-flask-app:latest 
