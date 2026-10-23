@@ -76,7 +76,7 @@ def hello():
             <h1>Hello, World!</h1>
             <p>Welcome to my AWS CI/CD project.</p>
             <p>Containerized using Docker.</p>
-            <p>Deployed using aws code build, code pipeline, code deploy.</p>
+            <p>Deployed using aws code build, code pipeline, code deploy.    </p>
         </div>
     </body>
     </html>
