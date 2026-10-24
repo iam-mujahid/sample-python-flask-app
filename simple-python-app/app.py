@@ -15,7 +15,7 @@ def hello():
             :root {
                 --bg-color: #f9e000;
                 --card-bg: #1e3b2b;
-                --text-main: #f8fafc;
+                --text-main: red;
                 --text-muted: #94a3b8;
                 --accent: #38bdf8;
                 --border: #334155;
@@ -41,7 +41,7 @@ def hello():
                 border-radius: 12px;
                 padding: 32px;
                 width: 100%;
-                max-width: 500px;
+                max-width: 750px;
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
             }
             h1 {
@@ -78,6 +78,7 @@ def hello():
             <p>Welcome to my AWS CI/CD project.</p>
             <p>Containerized using Docker.</p>
             <p>Deploying using code build and code deploy</p>
+            <p>i am new vanil</p>
             <p>Deployed using aws code build, code pipeline, code deploy.    </p>
             <p>After a huge struggle deployment and complete CICD project don it also had very less things to learn we will learn more inshallah</p>
         </div>
