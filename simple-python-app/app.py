@@ -13,7 +13,7 @@ def hello():
         <title>AWS CI/CD Project</title>
         <style>
             :root {
-                --bg-color: #0f172a;
+                --bg-color: #86df4c;
                 --card-bg: #1e293b;
                 --text-main: #f8fafc;
                 --text-muted: #94a3b8;
@@ -41,7 +41,7 @@ def hello():
                 border-radius: 12px;
                 padding: 32px;
                 width: 100%;
-                max-width: 440px;
+                max-width: 500px;
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
             }
             h1 {
